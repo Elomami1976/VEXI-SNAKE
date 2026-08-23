@@ -1,5 +1,7 @@
 # 🐍 VEXI SNAKE
 
+![VEXI SNAKE banner](assets/banner.svg)
+
 A neon-themed Snake game built in **vanilla HTML / CSS / JavaScript** — no frameworks, no bundler, no dependencies. Runs entirely in the browser and is fully playable on **desktop and mobile**.
 
 ## ✨ Features

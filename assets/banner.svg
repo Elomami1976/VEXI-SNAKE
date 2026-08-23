@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="VEXI SNAKE banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05070a"/>
+      <stop offset="0.6" stop-color="#080d16"/>
+      <stop offset="1" stop-color="#0b1424"/>
+    </linearGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#39ff14" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+
+    <radialGradient id="foodGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff2d78" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#ff2d78" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="bgHalo" cx="0.72" cy="0.45" r="0.65">
+      <stop offset="0" stop-color="#39ff14" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#39ff14" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#bgHalo)"/>
+
+  <!-- ============ left: title block ============ -->
+  <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="72" y="238" font-size="112" font-weight="800" letter-spacing="6" fill="#f4fff2">VEXI</text>
+    <text x="72" y="352" font-size="112" font-weight="800" letter-spacing="6"
+          fill="#39ff14" filter="url(#glow)">SNAKE</text>
+
+    <text x="76" y="420" font-size="26" fill="#93a7b4">
+      Classic Snake · vanilla HTML / CSS / JS · zero dependencies
+    </text>
+
+    <!-- feature pills -->
+    <g font-family="'Consolas', 'Courier New', monospace" font-size="19" font-weight="600">
+      <rect x="76"  y="462" width="150" height="44" rx="22" fill="none" stroke="#39ff14" stroke-opacity="0.45"/>
+      <text x="151" y="490" fill="#b6ffb0" text-anchor="middle">20×20 GRID</text>
+
+      <rect x="242" y="462" width="168" height="44" rx="22" fill="none" stroke="#00e5ff" stroke-opacity="0.45"/>
+      <text x="326" y="490" fill="#8df3ff" text-anchor="middle">MOBILE READY</text>
+
+      <rect x="426" y="462" width="196" height="44" rx="22" fill="none" stroke="#ff2d78" stroke-opacity="0.45"/>
+      <text x="524" y="490" fill="#ffa8c8" text-anchor="middle">WEB AUDIO SFX</text>
+    </g>
+  </g>
+
+  <!-- ============ right: mini game board ============ -->
+  <g>
+    <!-- board frame -->
+    <rect x="718" y="113" width="404" height="404" rx="18"
+          fill="#04070c" stroke="#39ff14" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="718" y="113" width="404" height="404" rx="18" fill="url(#grid)"/>
+
+    <!-- food glow + food -->
+    <circle cx="920" cy="157" r="46" fill="url(#foodGlow)" filter="url(#softglow)"/>
+    <circle cx="920" cy="157" r="13" fill="#ff2d78" filter="url(#glow)"/>
+
+    <!-- snake glow pass -->
+    <polyline points="760,475 1080,475 1080,395 800,395 800,315 1080,315 1080,235 882,235"
+              fill="none" stroke="#39ff14" stroke-opacity="0.55" stroke-width="34"
+              stroke-linecap="round" stroke-linejoin="round" filter="url(#softglow)"/>
+
+    <!-- snake body -->
+    <polyline points="760,475 1080,475 1080,395 800,395 800,315 1080,315 1080,235 882,235"
+              fill="none" stroke="#39ff14" stroke-width="26"
+              stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- segment highlights -->
+    <g fill="#d9ffd4" opacity="0.85">
+      <circle cx="1000" cy="475" r="6"/>
+      <circle cx="1080" cy="355" r="6"/>
+      <circle cx="900"  cy="395" r="6"/>
+      <circle cx="800"  cy="275" r="6"/>
+      <circle cx="1000" cy="315" r="6"/>
+      <circle cx="1080" cy="275" r="6"/>
+    </g>
+
+    <!-- head -->
+    <circle cx="882" cy="235" r="19" fill="#b6ffb0" filter="url(#glow)"/>
+    <circle cx="874" cy="228" r="3.2" fill="#04220a"/>
+    <circle cx="891" cy="228" r="3.2" fill="#04220a"/>
+  </g>
+
+  <!-- footer -->
+  <text x="72" y="576" font-family="'Consolas','Courier New',monospace" font-size="20"
+        fill="#5c6f7d">github.com/Elomami1976/VEXI-SNAKE</text>
+</svg>
