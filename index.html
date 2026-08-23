@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1220" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Snake" />
+  <title>Snake</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hud">
+      <h1>SNAKE</h1>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Best</span>
+          <span id="best">0</span>
+        </div>
+      </div>
+      <div class="hud-btns">
+        <button id="btn-pause" class="chip">PAUSE</button>
+        <button id="btn-sound" class="chip">SOUND ON</button>
+      </div>
+    </header>
+
+    <div class="board-holder">
+      <canvas id="game" width="480" height="480"></canvas>
+      <div class="overlay" id="overlay">
+        <h2 id="overlay-title">SNAKE</h2>
+        <p id="overlay-text">Eat the red food.<br>Don't hit walls or yourself.</p>
+        <button id="btn-start">PLAY</button>
+        <p class="overlay-hint">swipe or use the pad to steer</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="dpad">
+        <button class="pad up" data-dir="up" aria-label="Up">&#9650;</button>
+        <button class="pad left" data-dir="left" aria-label="Left">&#9664;</button>
+        <div class="pad-core"></div>
+        <button class="pad right" data-dir="right" aria-label="Right">&#9654;</button>
+        <button class="pad down" data-dir="down" aria-label="Down">&#9660;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="sound.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

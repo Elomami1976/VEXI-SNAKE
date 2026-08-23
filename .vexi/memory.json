@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "summary": "Web-based Snake game in vanilla HTML/CSS/JS (no bundler). Mobile-first conversion COMPLETE: index.html rewritten (59 lines: viewport meta, on-screen D-pad, pause/mute chips, tap-to-play); style.css rewritten and fixed (231 lines, replaces earlier broken version); game.js patched via 6 edits: pause/sound chips wired up, tap-anywhere-to-play, double-start guard, and forced start screen at boot (fixes stale GAME OVER / Final score: 0 display from cached files). sound.js unchanged (100 lines, zero-asset Web Audio synth, mute persisted in 'snake_muted'). Core specs kept: 20×20 grid, responsive HiDPI canvas, WASD/arrows, P pause, swipe input (20px threshold), input queue ≤2, high score 'snake_best', BASE_SPEED=230ms −7ms/food, MIN_SPEED=75ms cap. Serving: detached start-server.bat at http://localhost:3000. NEW TASK IN PROGRESS: user created GitHub repo https://github.com/Elomami1976/VEXI-SNAKE to push the project; assistant just began checking git state of folder. Outstanding: browser verification of mobile UI + boot fix; df.png still undescribed (assistant cannot view images).",
+  "decisions": [
+    "Snake game built as vanilla HTML/CSS/JS (no bundler/framework)",
+    "Game served locally at http://localhost:3000",
+    "Long-running dev server must be started detached via start-server.bat (foreground npx serve gets killed by 120s command timeout)",
+    "Board is 20×20 grid; canvas made responsive/HiDPI instead of fixed 480×480",
+    "Input queue of up to 2 buffered moves prevents reversing into self",
+    "High score persisted in localStorage key 'snake_best'",
+    "Neon dark theme chosen for UI",
+    "Speed curve mimics original Snake: BASE_SPEED 230ms start, -7ms per food, capped at MIN_SPEED 75ms",
+    "Sound effects implemented as zero-asset Web Audio synth in sound.js (no audio files)",
+    "Eat sound pitch rises with food streak (520Hz × 1.03^streak, capped at 24)",
+    "Mute state persisted in localStorage key 'snake_muted'",
+    "sound.js must load before game.js in index.html",
+    "Convert game to mobile-first design: responsive HiDPI canvas, safe-area insets, on-screen D-pad, pause/mute chips, tap-to-play, no-zoom/no-scroll",
+    "Assistant tooling is text-file read/edit + shell only — cannot view images (df.png must be described by user)",
+    "game.js forces the start screen at boot to prevent stale GAME OVER display",
+    "Project will be pushed to GitHub repo https://github.com/Elomami1976/VEXI-SNAKE"
+  ],
+  "updatedAt": "2026-08-23T19:39:54.210Z",
+  "compressedCount": 93
+}

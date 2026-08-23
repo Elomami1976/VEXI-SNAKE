@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Snake</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hud">
+      <h1>SNAKE</h1>
+      <div class="scores">
+        <div class="score-box">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="score-box">
+          <span class="label">Best</span>
+          <span id="best">0</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="board-holder">
+      <canvas id="game" width="480" height="480"></canvas>
+      <div class="overlay" id="overlay">
+        <h2 id="overlay-title">SNAKE</h2>
+        <p id="overlay-text">Eat the red food.<br>Don't hit walls or yourself.</p>
+        <button id="btn-start">PLAY</button>
+      </div>
+    </div>
+
+    <p class="help">
+      <kbd>W A S D</kbd> / <kbd>&uarr; &larr; &darr; &rarr;</kbd> move
+      &nbsp;&middot;&nbsp; <kbd>P</kbd> pause &nbsp;&middot;&nbsp; swipe on mobile
+    </p>
+  </div>
+
+  <script src="sound.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
